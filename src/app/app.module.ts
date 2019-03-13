@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AddNotesComponent } from './add-notes/add-notes.component';
 import { ChangeNotesComponent } from './change-notes/change-notes.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AddNotesComponent,
-    ChangeNotesComponent
+    ChangeNotesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

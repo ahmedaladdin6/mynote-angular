@@ -1,9 +1,11 @@
+<app-header (featureSelected)='onNavigate($event)'></app-header>
 <div class="container">
    
   <h3>You have ({{numberOfNotes}}) Notes</h3>
   <button class="btn btn-danger mr-2"(click)="deleteOlderNote()">DeleteOlderNotes</button>
   <button class="btn btn-danger"(click)="deleteLastNote()">DeleteLastNote</button>
   <h2>All my notes</h2>
+  
   <div *ngFor='let arrOfNote of arrOfNotes' class="mb-2">
     <div class="card mb-2" >
       <div class="card-header"> {{arrOfNote.name}}</div>
@@ -42,9 +44,12 @@
   </div>
 </div>
   <hr>
-  <app-add-notes (AddNoteFromAddNoteComp)='addNote($event)'></app-add-notes>
+  <app-add-notes 
+  *ngIf="loadedfeature === 'addNotes'"
+  (AddNoteFromAddNoteComp)='addNote($event)'>
+  </app-add-notes>
 
 
-
+  <app-change-notes  *ngIf="loadedfeature === 'changeNotes'"></app-change-notes>
 
 </div>

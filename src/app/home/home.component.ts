@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit ,DoCheck{
 
   constructor() { }
   ngOnInit() { }
+  loadedfeature ='home';
+  onNavigate(feature:string){
+     this.loadedfeature = feature;
+  }
 
   addNote(note:{name:string ,content:string}){
  this.arrOfNotes.push({
